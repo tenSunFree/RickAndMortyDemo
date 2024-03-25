@@ -1,0 +1,16 @@
+CREATE TABLE PhotoEntity(
+    albumId INTEGER,
+    id INTEGER NOT NULL PRIMARY KEY,
+    thumbnailUrl TEXT,
+    title TEXT,
+    url TEXT
+);
+
+getPhotos: SELECT * FROM PhotoEntity;
+
+insertPhoto:
+INSERT OR REPLACE INTO PhotoEntity (albumId, id, thumbnailUrl, title, url)
+VALUES (?,?,?,?,?);
+
+getPhoto:
+SELECT * FROM PhotoEntity WHERE id = :id;
